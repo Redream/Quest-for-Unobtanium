@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>LibGDX-Base</name>
+	<name>LD29</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -14,4 +14,36 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/break.wav</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Desktop/LD29/beneath/break.wav</locationURI>
+		</link>
+		<link>
+			<name>src/guzzle.wav</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Desktop/LD29/beneath/guzzle.wav</locationURI>
+		</link>
+		<link>
+			<name>src/pack</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Desktop/LD29/beneath/texoutput/pack</locationURI>
+		</link>
+		<link>
+			<name>src/pickup.wav</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Desktop/LD29/beneath/pickup.wav</locationURI>
+		</link>
+		<link>
+			<name>src/textures1.png</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Desktop/LD29/beneath/texoutput/textures1.png</locationURI>
+		</link>
+		<link>
+			<name>src/upgrade.wav</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Desktop/LD29/beneath/upgrade.wav</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

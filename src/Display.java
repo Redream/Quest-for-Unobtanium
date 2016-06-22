@@ -4,7 +4,6 @@ import java.util.Comparator;
 import java.util.List;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 
 
 public class Display {
@@ -29,9 +28,10 @@ public class Display {
 
 	public void render() {
 		culldist = (Game.DIAGDIST*Camera.cam.zoom)/2;
-
+		
 		Collections.sort(this.renderQueue, this.zSort);
-
+		Collections.sort(this.renderQueueHUD, this.zSort);
+		
 		this.batch.setProjectionMatrix(Camera.cam.combined);
 		this.renderList(this.renderQueue);
 
@@ -47,17 +47,7 @@ public class Display {
 	}
 
 	private void renderIndividual(Renderable r) {
-		float x = r.x - Game.WIDTH / 2;
-		float y = r.y - Game.HEIGHT / 2;
-
-		AtlasRegion ar = r.getTexture();
-
-		if(r.width == 0 || r.height == 0){
-			r.width = ar.getRegionWidth();
-			r.height = ar.getRegionHeight();
-		}
-
-		this.batch.draw(ar, x, y, 0, 0, r.width, r.height, r.xScale, r.yScale, 0);
+		r.render(batch);
 	}
 
 	public void queueRender(Renderable r) {
@@ -65,7 +55,7 @@ public class Display {
 			float xd = (Camera.cam.position.x+Game.WIDTH/2) - r.x;
 			float yd = (Camera.cam.position.y+Game.HEIGHT/2) - r.y;
 			double distance = Math.abs(Math.sqrt(xd*xd+yd*yd)) - Math.max(r.width*r.xScale,r.height*r.yScale);
-			distance *= 0.8;
+			distance *= 0.9;
 			if (distance > culldist)
 				return;
 

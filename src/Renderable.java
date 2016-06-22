@@ -1,3 +1,5 @@
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -23,6 +25,8 @@ public class Renderable implements InputListener{
 	
 	public float xScale;
 	public float yScale;
+	
+	public Color color = Color.WHITE;
 	
 	public AtlasRegion flipX(AtlasRegion ar,boolean x) {
 		
@@ -77,7 +81,7 @@ public class Renderable implements InputListener{
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle();
+		return new Rectangle(x,y,width*xScale,height*yScale);
 	}
 
 	public boolean keyDown(int keycode) {
@@ -110,6 +114,19 @@ public class Renderable implements InputListener{
 
 	public boolean scrolled(int amount) {
 		return false;
+	}
+
+	public void render(SpriteBatch batch) {
+		float dx = x - Game.WIDTH / 2;
+		float dy = y - Game.HEIGHT / 2;
+
+		AtlasRegion ar = getTexture();
+		if(width == 0 || height == 0){
+			width = ar.getRegionWidth();
+			height = ar.getRegionHeight();
+		}
+		batch.setColor(color);
+		batch.draw(ar, dx, dy, 0, 0, width, height, xScale, yScale, 0);
 	}
 	
 }

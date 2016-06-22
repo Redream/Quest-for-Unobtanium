@@ -6,10 +6,10 @@ public class GameDesktop {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.resizable = false;
 		config.vSyncEnabled = false;
-		config.title = "LibGDX Base";
+		config.title = "Quest for Unobtanium";
 		config.useGL20 = false;
-		config.height = 320;
-		config.width = 480;
+		config.height = 640;
+		config.width = 960;
 		new LwjglApplication(new Game(), config);
 	}
 }
